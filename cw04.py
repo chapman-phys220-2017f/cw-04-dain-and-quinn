@@ -2,11 +2,11 @@
 # -*- coding: utf-8 -*-
 
 ###
-# Name: YOUR_FULL_NAME_HERE
-# Student ID: ID_HERE
-# Email: CHAPMAN_EMAIL_HERE
+# Name: Quinn Gates and Dain Miller
+# Student ID: 2257528 and 2254735
+# Email: Gates111 mille480
 # Course: PHYS220/MATH220/CPSC220 Fall 2017
-# Assignment: HOMEWORK_OR_CLASSWORK_NUMBER
+# Assignment: Classwork 04
 ###
 
 """Classwork 04
@@ -58,8 +58,97 @@ def gen_gaussian_array(a, b, n=1000):
             x  : [a, ..., b] Array of n equally spaced float64 between a and b
             g  : [g(a), ..., g(b)] Array of Gaussian values matched to x
     """
-    pass
+    def gauss(x):
+        return (1/math.sqrt(2*math.pi))*math.exp(-x**2/2)
+    x = np.array(np.linspace(a,b,n), dtype=np.float64)   #Uses linspace to make array of equally spaced coordinates
+    fx = np.vectorize(gauss)                             #Creates a function that impliments gauss() for x
+    return (x, fx(x))
 
+def gen_sinc_list(a,b,n=1000):
+    """gen_sinc_list(a, b, n=1000)
+    Generate a discrete approximation of a sinc function, including its
+    domain and range, stored as a pair of python lists.
+    
+    Args:
+        a (float) : Lower bound of domain
+        b (float) : Upper bound of domain
+        n (int, optional) : Number of points in domain, defaults to 1000.
+    
+    Returns:
+        (x, g) : Pair of lists of floats
+            x  : [a, ..., b] List of n equally spaced floats between a and b
+            g  : [g(a), ..., g(b)] List of sinc values matched to x
+    """
+    def sinc(x):
+        return (math.sin(x)/x)
+    dx = (b-a)/(n-1)                         # spacing between points
+    x = [a + k*dx for k in range(n)]         # domain list
+    g = [sinc(xk) for xk in x]                  # range list
+    return (x, g)
+
+def gen_sinc_array(a,b,n=1000):
+    """gen_sinc_array(a, b, n=1000)
+    Generate a discrete approximation of a sinc function, including its
+    domain and range, stored as a pair of numpy arrays.
+    
+    Args:
+        a (float) : Lower bound of domain
+        b (float) : Upper bound of domain
+        n (int, optional) : Number of points in domain, defaults to 1000.
+    
+    Returns:
+        (x, g) : Pair of numpy arrays of float64
+            x  : [a, ..., b] Array of n equally spaced float64 between a and b
+            g  : [g(a), ..., g(b)] Array of sinc values matched to x
+    """
+    def sinc(x):
+        return (math.sin(x)/x)
+    x = np.array(np.linspace(a,b,n), dtype=np.float64)   #Uses linspace to make array of equally spaced coordinates
+    fx = np.vectorize(sinc)                             #Creates a function that impliments sinc() for x
+    return (x, fx(x))
+
+def gen_sinf_list(a,b,n=1000):
+    """gen_sinf_list(a, b, n=1000)
+    Generate a discrete approximation of a sinf function, including its
+    domain and range, stored as a pair of python lists.
+    
+    Args:
+        a (float) : Lower bound of domain
+        b (float) : Upper bound of domain
+        n (int, optional) : Number of points in domain, defaults to 1000.
+    
+    Returns:
+        (x, g) : Pair of lists of floats
+            x  : [a, ..., b] List of n equally spaced floats between a and b
+            g  : [g(a), ..., g(b)] List of sinf values matched to x
+    """
+    def sinf(x):
+        return (math.sin(x)/x)
+    dx = (b-a)/(n-1)                         # spacing between points
+    x = [a + k*dx for k in range(n)]         # domain list
+    g = [sinf(xk) for xk in x]                  # range list
+    return (x, g)
+ 
+def gen_sinf_array(a,b,n=1000):
+    """gen_sinf_array(a, b, n=1000)
+    Generate a discrete approximation of a sinf function, including its
+    domain and range, stored as a pair of numpy arrays.
+    
+    Args:
+        a (float) : Lower bound of domain
+        b (float) : Upper bound of domain
+        n (int, optional) : Number of points in domain, defaults to 1000.
+    
+    Returns:
+        (x, g) : Pair of numpy arrays of float64
+            x  : [a, ..., b] Array of n equally spaced float64 between a and b
+            g  : [g(a), ..., g(b)] Array of sinf values matched to x
+    """
+    def sinf(x):
+        return (math.sin(1/x))
+    x = np.array(np.linspace(a,b,n), dtype=np.float64)   #Uses linspace to make array of equally spaced coordinates
+    fx = np.vectorize(sinf)                             #Creates a function that impliments sinc() for x
+    return (x, fx(x)) 
 
 def main(a,b,n=1000):
     """main(a, b, n=1000)
