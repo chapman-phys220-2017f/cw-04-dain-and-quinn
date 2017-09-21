@@ -1,8 +1,8 @@
 # PHYS220 CW 4
 
-**Author(s):** **CHANGEME**
+**Author(s):** **Dain and Quinn**
 
-[![Build Status](https://travis-ci.org/chapman-phys220-2017f/cw-04-YOURNAME.svg?branch=master)](https://travis-ci.org/chapman-phys220-2017f/cw-04-YOURNAME)
+[![Build Status](https://travis-ci.org/chapman-phys220-2017f/cw-04-dain-and-quinn.svg?branch=master)](https://travis-ci.org/chapman-phys220-2017f/cw-04-dain-and-quinn)
 
 ## Specification
 
@@ -17,17 +17,16 @@ Pro-tip: using git to manage conflicts on Jupyter notebooks is a pain. I recomme
 
 ## Assessment
 
-Analyze in this section what you found useful about this assignment in your own words. Include any lingering questions or comments that you may have.
+We learned about the efficiency of numpy. We can see how much better it is at handling large amounts of data. The vectorize function is really cool. It helped us create tests for our code which will definitely be helpful in the future.  
 
-**CHANGEME**
+
 
 ## Honor Pledge
 
 I pledge that all the work in this repository is my own with only the following exceptions:
 
-* Content of starter files supplied by the instructor;
-* Code borrowed from another source, documented with correct attribution in the code and summarized here.
+* Content of starter files supplied by the instructor; we heavily borrowed code from Dr. Dressel 
 
 Signed,
 
-**YOURNAME**
+**Dain Miller and Quinn Gates**
