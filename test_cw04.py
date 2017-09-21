@@ -2,11 +2,11 @@
 # -*- coding: utf-8 -*-
 
 ###
-# Name: YOUR_FULL_NAME_HERE
-# Student ID: ID_HERE
-# Email: CHAPMAN_EMAIL_HERE
+# Name: Dain Miller and Quinn Gates
+# Student ID: 2254735 and
+# Email: mille480 and 
 # Course: PHYS220/MATH220/CPSC220 Fall 2017
-# Assignment: HOMEWORK_OR_CLASSWORK_NUMBER
+# Assignment: Classwork 4
 ###
 
 """Classwork 04 Test Functions
