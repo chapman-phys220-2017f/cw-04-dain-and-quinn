@@ -59,8 +59,10 @@ def gen_gaussian_array(a, b, n=1000):
             g  : [g(a), ..., g(b)] Array of Gaussian values matched to x
     """
     def gauss(x):
-        return (1/math.sqrt(2*math.pi))*math.exp(-x**2/2)
+        return (1/math.sqrt(2*math.pi))*math.exp(-x**2/2)         ### Use np.exp and np.pi if using numpy!
+    ### No need to use np.array here: np.linspace already returns an array
     x = np.array(np.linspace(a,b,n), dtype=np.float64)   #Uses linspace to make array of equally spaced coordinates
+    ### No need to use vectorize here, since all operations in gauss would be already vectorized (if you used np.exp etc.)
     fx = np.vectorize(gauss)                             #Creates a function that impliments gauss() for x
     return (x, fx(x))
 
@@ -101,7 +103,7 @@ def gen_sinc_array(a,b,n=1000):
             x  : [a, ..., b] Array of n equally spaced float64 between a and b
             g  : [g(a), ..., g(b)] Array of sinc values matched to x
     """
-    def sinc(x):
+    def sinc(x):                                          ### See comments for gauss above
         return (math.sin(x)/x)
     x = np.array(np.linspace(a,b,n), dtype=np.float64)   #Uses linspace to make array of equally spaced coordinates
     fx = np.vectorize(sinc)                             #Creates a function that impliments sinc() for x
@@ -145,7 +147,7 @@ def gen_sinf_array(a,b,n=1000):
             g  : [g(a), ..., g(b)] Array of sinf values matched to x
     """
     def sinf(x):
-        return (math.sin(1/x))
+        return (math.sin(1/x))                             ### See comments for gauss above
     x = np.array(np.linspace(a,b,n), dtype=np.float64)   #Uses linspace to make array of equally spaced coordinates
     fx = np.vectorize(sinf)                             #Creates a function that impliments sinc() for x
     return (x, fx(x)) 
